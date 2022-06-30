@@ -1,5 +1,5 @@
 import React from "react";
-
+import { CardListPlanets } from "../component/cardListPlanets";
 
 import "../../styles/home.css";
 
@@ -10,6 +10,7 @@ export const Home = () => (
 	<div className="container-fluid ">
 
 	<CardListCharacters  />
+	<CardListPlanets />
 	
 	
 	</div>
