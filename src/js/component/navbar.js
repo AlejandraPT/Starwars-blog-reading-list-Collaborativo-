@@ -13,7 +13,7 @@ export const Navbar = () => {
 	  };
 
 	  
-
+	
   return (
     <nav className="navbar navbar-light bg-light mb-3 px-5">
       <Link to="/">
