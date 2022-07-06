@@ -6,9 +6,8 @@ import { useParams } from "react-router-dom";
 export const Detail = () => {
   const { store, actions } = useContext(Context);
   const params = useParams();
-
   useEffect(() => {
-    actions.details(params.path, params.index);
+    actions.details(params.item, params.id);
   }, []);
 
   return (
@@ -17,7 +16,7 @@ export const Detail = () => {
         <div className="col-12 col-md-6 text-center">
           <img
             className="img img-fluid"
-            src= {`https://starwars-visualguide.com/assets/img/${params.path == "people" ? "characters" : "planets"}/${params.index}.jpg`}
+            src= {`https://starwars-visualguide.com/assets/img/${params.item == "people" ? "characters" : "planets"}/${params.id}.jpg`}
           ></img>
         </div>
         <div className="col-12 col-md-6 text-center">
@@ -49,7 +48,7 @@ export const Detail = () => {
         </div>
       </div>
 
-      {params.path === "people" ? (
+      {params.item === "people" ? (
         <div className="row my-4 border-top border-danger border-2 mx-2 text-center">
           <div className="col-4 col-md-2 mt-3">
             <p className="fw-bold text-danger">Height</p>

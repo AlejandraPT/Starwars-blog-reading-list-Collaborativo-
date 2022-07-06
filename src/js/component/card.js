@@ -7,9 +7,14 @@ import { Link } from "react-router-dom";
 
 export const Card = (props) => {
   const { store, actions } = useContext(Context);
-
+  const [ isClick , setIsClick ] = useState(false);
  
+  const handleClick = () => {actions.setFavorites(props.title)
+    isClick == true ? setIsClick(false) : setIsClick(true) 
+  }
 
+  console.log(isClick)
+  
   return (
     <div
       style={{ width: "20rem" }}
@@ -31,7 +36,7 @@ export const Card = (props) => {
           <Link to={`/detail/${props.path}/${props.index}`}>
           <button  className="btn btn-outline-primary">Learn more!</button>
           </Link>
-          <button onClick={() => actions.setFavorites(props.title)} className=" btn btn-outline-warning">
+          <button onClick={handleClick} className={"btn" + isClick === true ? "btn-warning" : "btn-outline-warning" }>
             <i className="far fa-heart" />
           </button>
         </div>
