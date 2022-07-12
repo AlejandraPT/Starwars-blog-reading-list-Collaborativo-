@@ -36,7 +36,7 @@ export const Card = (props) => {
           <Link to={`/detail/${props.path}/${props.index}`}>
           <button  className="btn btn-outline-primary">Learn more!</button>
           </Link>
-          <button onClick={handleClick} className={"btn" + isClick === true ? "btn-warning" : "btn-outline-warning" }>
+          <button onClick={handleClick} className={ isClick === true ? " btn btn-warning" : " btn btn-outline-warning" }>
             <i className="far fa-heart" />
           </button>
         </div>

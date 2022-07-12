@@ -34,7 +34,7 @@ export const Navbar = () => {
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
 		  {store.favList.map((item, index) => {
-          return (<li className="dropdown-item" key={index}>{item} <FontAwesomeIcon onClick={()=>{actions.deleteFavorites(index)}} icon={faTrash} /></li>)
+          return (<li className="dropdown-item" key={index}>{item} <FontAwesomeIcon onClick={()=>{actions.deleteFavorites(index, item)}} icon={faTrash} /></li>)
 
         })}
            

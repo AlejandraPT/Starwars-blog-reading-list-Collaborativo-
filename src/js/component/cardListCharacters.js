@@ -5,8 +5,6 @@ import { Card } from "./card";
 export const CardListCharacters = () => {
   const { store, actions } = useContext(Context);
 
-  
-
   useEffect(() => {
     actions.listCharacters();
   }, []);
@@ -17,8 +15,6 @@ export const CardListCharacters = () => {
 
        <div className="row flex-row flex-nowrap overflow-auto"> {/*usamos esto para crear lo de la barra horizontal */}
         {store.characters.map((item, index) => {
-
-          
           return <Card key={index} title={item.name}
            description1={"Gender:"} result1={item.gender}
             description2={"Hair color:"} result2={item.hair_color}
