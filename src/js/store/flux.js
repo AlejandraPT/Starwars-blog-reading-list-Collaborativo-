@@ -14,8 +14,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 
-			bool:false,
-
 			characters: [],
 			planets: [],
 			detail:{},
@@ -64,12 +62,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ favList: [...store.favList, item] });
 
 			},
-			deleteFavorites: (index, name) =>{
+			deleteFavorites: (item) =>{
 
 				const store = getStore();
 
-				setStore({ favList: store.favList.filter((favList, i) => i !== index)})
-				setStore({bool: store.favList.includes(name)})
+				setStore({ favList: store.favList.filter((favList, i) => favList.id !== item.id)})
 			},
 			changeColor: (index, color) => {
 				//get the store

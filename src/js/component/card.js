@@ -7,13 +7,9 @@ import { Link } from "react-router-dom";
 
 export const Card = (props) => {
   const { store, actions } = useContext(Context);
-  const [ isClick , setIsClick ] = useState(false);
- 
-  const handleClick = () => {actions.setFavorites(props.title)
-    isClick == true ? setIsClick(false) : setIsClick(true) 
-  }
 
-  console.log(isClick)
+  const handleClick = () => {actions.setFavorites({name: props.title, id: props.index})
+  }
   
   return (
     <div
@@ -36,7 +32,7 @@ export const Card = (props) => {
           <Link to={`/detail/${props.path}/${props.index}`}>
           <button  className="btn btn-outline-primary">Learn more!</button>
           </Link>
-          <button onClick={handleClick} className={ isClick === true ? " btn btn-warning" : " btn btn-outline-warning" }>
+          <button onClick={handleClick} className={ store.favList[props.index-1] ? "btn btn-warning" : " btn btn-outline-warning" }>
             <i className="far fa-heart" />
           </button>
         </div>
